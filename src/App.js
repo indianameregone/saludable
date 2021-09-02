@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router,Switch, Route, Link } from "react-router-dom";
+import Login from './component/login.js';
+import Formulario from './component/form.js'
+import Bebida from './component/bebida.js';
+import './index.css'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function App(){
+    return(
+        <div className='fondo'>
+            <Router>
+                <Switch>
+                    <Route path='/' exact>
+                        <Login />                                              
+                    </Route>
+                    <Route path='/formulario'>
+                        <Formulario />
+                    </Route>
+                    <Route path='/bebida'>
+                        <Bebida />
+                    </Route>
+                </Switch>
+            </Router>
+        </div>
+    )
 }
-
-export default App;
+export default App
